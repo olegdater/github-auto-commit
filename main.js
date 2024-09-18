@@ -27,10 +27,10 @@ async function autoCommit() {
         return 0;
     }
 
-    const prompt = `I am working on a software project. 
-    I want to summarize the following input into a commit message 
-    that is no longer than 10 words. 
-    Please summarize the following git diff in a concise message 
+    const prompt = `I am working on a software project using github.
+    I want to summarize the following input into a git commit message 
+    that is no longer than 6 words or less. 
+    Please summarize the following git diff in a very short, concise message 
     that I can use as a commit message. 
     Here is the git diff:\n\n${JSON.stringify(diffOutput)}`;
 
