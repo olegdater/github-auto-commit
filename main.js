@@ -55,7 +55,8 @@ async function autoCommit() {
             }
         });
     } catch (error) {
-        console.error("Error calling Claude API:", error.message);
+        console.error("Error calling Claude API: ", error.message);
+        console.error(error);
         return 1;
     }
 
