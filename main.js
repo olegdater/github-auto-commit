@@ -61,7 +61,7 @@ async function autoCommit() {
     }
 
 
-    const summary = response.data.content[0].text;
+    const summary = response.data.content[0].text.replace(/['"`;$&|<>]/g, '');
 
     // Commit the changes with the generated summary
     try {
