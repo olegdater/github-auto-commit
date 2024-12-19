@@ -10,7 +10,7 @@ The Anthropic API is used to generate the commit message. Therefore, you will ne
 ## Installation
 
 ```bash
-npm install -g auto-commit-cli
+npm install -g https://github.com/olegdater/github-auto-commit.git
 sudo npm install -g https://github.com/olegdater/github-auto-commit.git
 ```
 
