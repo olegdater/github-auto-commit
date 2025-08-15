@@ -39,7 +39,7 @@ async function autoCommit() {
     let response;
     try {
         response = await axios.post('https://api.anthropic.com/v1/messages', {
-            model: "claude-3-5-sonnet-20241022",
+            model: "claude-3-7-sonnet-20250219",
             max_tokens: 1024,
             messages: [
                 {
