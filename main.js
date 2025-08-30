@@ -28,8 +28,9 @@ async function autoCommit() {
     }
 
     const prompt = `I am working on a software project using github.
-    I want to summarize the following input into a git commit message 
-    that is no longer than 6 words or less. One line, no need to add any other text, just plain straight commit message.
+    I want to summarize the following input into a git commit message, can be multiple lines.
+    that is no longer than 6 words or less in each line. 
+    No need to add any other text, just plain straight commit message.
     Please summarize the following git diff in a very short, concise message 
     that I can use as a commit message. 
     Here is the git diff:\n\n${JSON.stringify(diffOutput)}`;
