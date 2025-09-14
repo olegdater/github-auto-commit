@@ -69,13 +69,21 @@ async function autoCommit() {
     // Commit the changes with the generated summary
     try {
         execSync(`git commit -m "${summary}"`);
-        execSync('git push');
+        
+        // Check if AUTO_COMMIT_PUSH_DISABLED is set to 'disabled'
+        const shouldPush = process.env.AUTO_COMMIT_PUSH_DISABLED !== 'disabled';
+        
+        if (shouldPush) {
+            execSync('git push');
+            console.log("[auto-commit] Changes committed and pushed with the following summary:");
+        } else {
+            console.log("[auto-commit] Changes committed (push skipped) with the following summary:");
+        }
     } catch (error) {
         console.error("Error committing or pushing changes:", error.message);
         return 1;
     }
 
-    console.log("[auto-commit] Changes committed and pushed with the following summary:");
     console.log("-> " + summary);
 }
 
