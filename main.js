@@ -27,15 +27,16 @@ async function autoCommit() {
         return 0;
     }
 
-    const prompt = `I am working on a software project using github.
-    I want to summarize the following input into a git commit message,
-    can be multiple lines. that are no longer than 6 words or less in each line,
-    no need to add white space between lines,
-    no need to add empty lines between lines. 
-    No need to add any other text, just plain straight commit message.
-    Please summarize the following git diff in a very short, concise message 
-    that I can use as a commit message. 
-    Here is the git diff:\n\n${JSON.stringify(diffOutput)}`;
+    const prompt = `Generate a concise git commit message from this diff. Follow these rules:
+- Use conventional commit format: type: description
+- Types: feat, fix, refactor, docs, style, test, chore
+- Keep each line under 72 characters
+- Can be multiple lines if needed (but keep it brief)
+- No empty lines between lines
+- Output ONLY the commit message, no explanations or quotes
+
+Git diff:
+${diffOutput}`;
 
 
     // Use Claude API to summarize the changes
